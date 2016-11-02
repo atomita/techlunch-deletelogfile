@@ -1,20 +1,19 @@
 package main
 
 import (
-  "log"
-  "github.com/atomita/techlunch-deletelogfile/app"
+	"github.com/atomita/techlunch-deletelogfile/app"
+	"log"
 )
 
-
 func main() {
-  app.Init(false)
-  
-  log.Printf("trace: this is a trace log.")
-  log.Printf("debug: this is a debug log.")
-  log.Printf("info: this is an info log.")
-  log.Printf("warn: this is a warning log.")
-  log.Printf("error: this is an error log.")
-  log.Printf("alert: this is an alert log.")
+	app.Init(false)
 
-  log.Printf("this is a default level log.")
+	log.Printf("trace: this is a trace log.")
+	log.Printf("debug: this is a debug log.")
+	log.Printf("info: this is an info log.")
+	log.Printf("warn: this is a warning log.")
+	log.Printf("error: this is an error log.")
+	log.Printf("alert: this is an alert log.")
+
+	log.Printf("this is a default level log.")
 }
