@@ -2,7 +2,7 @@ package main
 
 import (
   "log"
-  "./app"
+  "github.com/atomita/techlunch-deletelogfile/app"
 )
 
 
