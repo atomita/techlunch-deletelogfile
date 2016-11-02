@@ -1,11 +1,11 @@
-package app
+package main
 
 import (
 	"github.com/comail/colog"
 	"log"
 )
 
-func Init(verbose bool) {
+func loghack(verbose bool) {
 	colog.SetDefaultLevel(colog.LTrace)
 	if verbose {
 		colog.SetMinLevel(colog.LTrace)

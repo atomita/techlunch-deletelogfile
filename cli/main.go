@@ -1,12 +1,11 @@
 package main
 
 import (
-	"github.com/atomita/techlunch-deletelogfile/app"
 	"log"
 )
 
 func main() {
-	app.Init(false)
+	loghack(false)
 
 	log.Printf("trace: this is a trace log.")
 	log.Printf("debug: this is a debug log.")
