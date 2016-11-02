@@ -3,5 +3,5 @@
 ## run
 
 ```sh
-go run cli/main.go
+go run cli/*
 ```
