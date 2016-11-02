@@ -10,7 +10,7 @@ func loghack(verbose bool) {
 	if verbose {
 		colog.SetMinLevel(colog.LTrace)
 	} else {
-		colog.SetMinLevel(colog.LWarning)
+		colog.SetMinLevel(colog.LInfo)
 	}
 	colog.SetFormatter(&colog.StdFormatter{
 		Colors: true,

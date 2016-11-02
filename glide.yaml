@@ -1,3 +1,4 @@
 package: .
 import:
 - package: github.com/comail/colog
+- package: github.com/jteeuwen/go-pkg-optarg
