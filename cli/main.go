@@ -72,7 +72,7 @@ func run() {
 	log.Printf("debug: pattern: %v", pattern)
 	log.Printf("debug: period: %v, %v", period, time)
 
-	files, err := app.Files(dir+"/"+pattern, time)
+	files, err := app.Find(dir+"/"+pattern, time)
 	if err != nil {
 		log.Printf("error: %v", err)
 		os.Exit(1)

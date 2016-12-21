@@ -7,7 +7,7 @@ import (
 	"time"
 )
 
-func Files(pattern string, before time.Time) (files []string, err error) {
+func Find(pattern string, before time.Time) (files []string, err error) {
 	files, err = filepath.Glob(pattern)
 	if err != nil {
 		return
