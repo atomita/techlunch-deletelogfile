@@ -9,6 +9,20 @@ import (
 )
 
 func main() {
+	if len(optarg.Remainder) == 1 {
+		cmd := optarg.Remainder[0]
+		switch cmd {
+		case "run":
+			run()
+		case "version":
+			log.Printf("v0.0.1")
+		}
+	} else {
+		optarg.Usage()
+	}
+}
+
+func init() {
 	dir, _ := os.Getwd()
 
 	optarg.Header("run")
@@ -21,18 +35,6 @@ func main() {
 
 	ch := optarg.Parse()
 	<-ch
-
-	if len(optarg.Remainder) == 1 {
-		cmd := optarg.Remainder[0]
-		switch cmd {
-		case "run":
-			run()
-		case "version":
-			log.Printf("v0.0.1")
-		}
-	} else {
-		optarg.Usage()
-	}
 }
 
 func run() {
@@ -72,7 +74,7 @@ func run() {
 
 	files, err := app.Files(dir+"/"+pattern, time)
 	if err != nil {
-		log.Printf("error: this is an error log.", err)
+		log.Printf("error: %v", err)
 		os.Exit(1)
 		return
 	}
@@ -84,17 +86,8 @@ func run() {
 
 	err = app.Delete(files, !really)
 	if err != nil {
-		log.Printf("error: this is an error log.", err)
+		log.Printf("error: %v", err)
 		os.Exit(1)
 		return
 	}
-
-	// log.Printf("trace: this is a trace log.")
-	// log.Printf("debug: this is a debug log.")
-	// log.Printf("info: this is an info log.")
-	// log.Printf("warn: this is a warning log.")
-	// log.Printf("error: this is an error log.")
-	// log.Printf("alert: this is an alert log.")
-	//
-	// log.Printf("this is a default level log.")
 }
